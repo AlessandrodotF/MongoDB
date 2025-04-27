@@ -29,11 +29,11 @@ The **AGGREGATIONS** folder contains two examples of aggregation pipelines used 
 
 1. **match_group.py**:
     - Demonstrates the use of the `$match` and `$group` stages in an aggregation pipeline.
-    - `$match` is used to filter documents, while `$group` is used to group documents based on a specified field and perform operations such as counting or summing.
+    - `$match` is used to filter documents, while `$group` is used to group documents based on a specified field and perform specific operations such as counting or summing.
 
 2. **sort_project.py**:
     - Demonstrates the use of the `$sort` and `$project` stages in an aggregation pipeline.
-    - `$sort` is used to sort documents by a specified field, and `$project` is used to include or exclude specific fields from the results.
+    - `$sort` is used to sort documents by a specified field (1: from highest to lowest, 0: the opposite), and `$project` is used to include or exclude specific fields from the results.
 
 ### CRUD_OPERATIONS
 
@@ -43,18 +43,16 @@ The **CRUD_OPERATIONS** folder contains five files, each demonstrating a differe
     - Demonstrates how to delete documents from a MongoDB collection using the `delete_one()` and `delete_many()` methods.
 
 2. **find.py**:
-    - Demonstrates how to find documents in a MongoDB collection using the `find()` method. This includes basic queries, filtering, and projecting specific fields.
+    - Demonstrates how to find documents in a MongoDB collection using the `find_one()` and `find()` method.
 
 3. **insert.py**:
     - Demonstrates how to insert documents into a MongoDB collection using the `insert_one()` and `insert_many()` methods.
 
 4. **transactions.py**:
     - Demonstrates how to perform transactions in MongoDB using the `start_session()` method and multi-document transactions.
-    - This example includes operations for updating multiple collections in a transaction, ensuring atomicity.
 
 5. **update.py**:
     - Demonstrates how to update documents in a MongoDB collection using the `update_one()` and `update_many()` methods.
-    - Includes examples of setting and incrementing field values.
 
 ## Requirements
 
@@ -68,19 +66,3 @@ You can install the required packages using pip:
 pip install pymongo
 ```
 
-## Usage
-
-1. **Ensure you have MongoDB running**: You need a running MongoDB instance to connect to. If you don't have MongoDB installed locally, you can use a cloud MongoDB service such as [MongoDB Atlas](https://www.mongodb.com/cloud/atlas).
-   
-2. **Update MongoDB URI**: In each of the scripts, you will need to replace the placeholder for the MongoDB URI (`MONGODB_URI`) with your own connection string. This can be found in your MongoDB Atlas account or in your local MongoDB configuration.
-
-3. **Run the scripts**:
-    - Navigate to the folder of the operation you want to test and run the respective Python script, for example:
-    ```bash
-    python AGGREGATIONS/match_group.py
-    python CRUD_OPERATIONS/insert.py
-    ```
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
